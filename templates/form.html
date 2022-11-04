@@ -1,0 +1,23 @@
+{% extends 'base.html' %} {% block title %}{{title_holder}} - Question
+#{{quest_num + 1}}{% endblock %} {% block content %}
+
+<p>
+  <span>Question {{quest_num + 1}} of {{total_quest}}:</span>{{quest_holder}}
+</p>
+
+<form action="/answer" method="post" id="answer">
+  {% for answer, form_ctrl in answer_holder %}
+  <input
+    type="radio"
+    name="q-{{quest_num}}-choices"
+    id="{{form_ctrl}}"
+    value="{{answer}}"
+    required
+  />
+  <label for="{{form_ctrl}}">{{answer}}</label><br />
+  {% endfor %}
+</form>
+
+{% endblock %} {% block scripts %}
+<script src="/static/allradio.js"></script>
+{% endblock %}

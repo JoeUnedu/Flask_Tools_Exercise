@@ -1,0 +1,11 @@
+{% extends 'base.html' %} {% block title %}{{title_holder}} Thank You! {%
+endblock %} {% block content %}
+
+<h1>Thank you!</h1>
+<p>
+  We are extremely grateful for taking your time to complete this
+  {{title_holder}}.
+</p>
+<p><br />{{quest_ans_holder|safe}}</p>
+
+{% endblock %}
